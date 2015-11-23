@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="container">
+		<h1>{{data.title}}</h1>
+		<div class="links">
+			{{#data.children}}
+				<a href="/{{tag}}" class="link">{{title}}</a>
+			{{/data.children}}
+		</div>
+		<br>
+		<hr>
+		<div>
+			<p class="description">
+				{{data.description}}
+			</p>
+		</div>
+	</div>
+</body>
+</html>

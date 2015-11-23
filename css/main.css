@@ -1,0 +1,39 @@
+body {
+	background-color: #fafafa;
+}
+
+.container {
+	background-color: white;
+	border: solid 1px #666;
+	border-radius: 6px;
+	width: 80%;
+	height: 100%;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "Helvetica"
+}
+
+h1 {
+	text-align: center;
+	font-family: "Times";
+}
+
+.link {
+	text-decoration: none;
+	border: 1px solid #666;
+	border-radius: 3px;
+	padding: 4px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.links {
+	display: inline-flex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.description {
+	line-height: 1.5;
+}
