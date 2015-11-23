@@ -1,7 +1,7 @@
 # chinese-history-explorer
 open source Chinese history wiki
 
-This repository is the source for the chinese history wiki at (coming soon).com. If you are an expert on some topic in Chinese history feel free to add to the source data of this repository.
+This repository is the source for the [chinese history wiki](http://chinese-history.herokuapp.com/). If you are an expert on some topic in Chinese history feel free to add to the source data of this repository.
 
 The server is written in my own dialect of JavaScript called [Weirdo](https://github.com/incrediblesound/weirdo) and must be transpiled to be run locally.
 
