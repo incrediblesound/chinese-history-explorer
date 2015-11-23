@@ -32,19 +32,29 @@ var _ = require('lodash');
 var main = wdo.loadText('./templates/main.html');
 var view = null;
 if(!this.data["handler"].history.length){
-view = wdo.renderView(main, { data: this.data["handler"].current });
+this.data["handler"].current = this.data["handler"].data.history;
+view = wdo.renderView(main, { data: this.data["handler"].current, url: '' });
 this.data["handler"].history.push({ data: this.data["handler"].current, template: view });
 res.end(view);
 } else {
 ;
-var tag = req.url.split('/')[1];
-var data = _.findWhere(this.data["handler"].current.children, {tag: tag});
-if(data === undefined){
+var pieces = req.url.split('/');
+var placeholder = this.data["handler"].data.history;
+var pc;
+for(var i = 0; i < pieces.length; i++){
+pc = pieces[i];
+if(pc.length && placeholder !== undefined){
+;
+placeholder = _.findWhere(placeholder.children, {tag: pc});
+};
+};
+this.data["handler"].current = placeholder;
+if(this.data["handler"].current === undefined){
 ;
 this.data["handler"].history.pop();
 if(!this.data["handler"].history.length){
 ;
-view = wdo.renderView(main, { data: this.data["handler"].data.history });
+view = wdo.renderView(main, { data: this.data["handler"].data.history, url: '' });
 this.data["handler"].history.push({ data: this.data["handler"].data.history, template: view });
 res.end(view);
 } else {
@@ -54,9 +64,8 @@ res.end(this.data["handler"].history[this.data["handler"].history.length-1].temp
 };
 } else {
 ;
-view = wdo.renderView(main, { data: data });
-this.data["handler"].current = data;
-this.data["handler"].history.push({ data: data, template: view});
+view = wdo.renderView(main, { data: this.data["handler"].current, url: req.url });
+this.data["handler"].history.push({ data: this.data["handler"].current, template: view});
 res.end(view);
 };
 };
@@ -64,11 +73,11 @@ res.end(view);
 }
 wdo_modules.Router = Router;
 var router = new wdo_modules.Router();
-var eoco_event = function(request, response){
+var ahqz_event = function(request, response){
 router.serve(request, response);
 }
 var http = require('http');
-var server = http.createServer(eoco_event);
+var server = http.createServer(ahqz_event);
 var PORT = process.env.PORT || 3000;
 server.listen(PORT);
 console.log("http server listening on port "+PORT);

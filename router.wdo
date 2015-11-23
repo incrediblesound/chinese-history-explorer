@@ -35,18 +35,25 @@ Init[..][..]{
 	main = sys.loadText('./templates/main.html');
 	view = null;
 	if(!Self.history.length) ->
-		view = sys.renderView(main, { data: Self.current });
+		Self.current = Self.data.history;
+		view = sys.renderView(main, { data: Self.current, url: '' });
 		Self.history.push({ data: Self.current, template: view });
 		res.end(view);
 
 	else ->
-		tag = req.url.split('/')[1];
-		data = _.findWhere(Self.current.children, {tag: tag});
+		pieces = req.url.split('/');
+		placeholder = Self.data.history;
+		each pieces pc ->
+			if(pc.length && placeholder !== undefined)->
+				placeholder = _.findWhere(placeholder.children, {tag: pc});
+			if;
+		each;
+		Self.current = placeholder;
 
-		if(data === undefined) ->
+		if(Self.current === undefined) ->
 			Self.history.pop();
 			if(!Self.history.length) ->
-				view = sys.renderView(main, { data: Self.data.history });
+				view = sys.renderView(main, { data: Self.data.history, url: '' });
 				Self.history.push({ data: Self.data.history, template: view });
 				res.end(view);
 			else ->
@@ -54,9 +61,8 @@ Init[..][..]{
 				res.end(Self.history[Self.history.length-1].template);
 			if;
 		else ->
-			view = sys.renderView(main, { data: data });
-			Self.current = data;
-			Self.history.push({ data: data, template: view});
+			view = sys.renderView(main, { data: Self.current, url: req.url });
+			Self.history.push({ data: Self.current, template: view});
 			res.end(view);
 		if;
 	if;
