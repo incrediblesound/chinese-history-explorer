@@ -20,7 +20,14 @@ res.end();
 });
 } else if(/text\/html/.test(accept)){
 ;
+if(req.url === '/info'){
+;
+var view = wdo.loadText('./templates/about.html');
+res.end(view);
+} else {
+;
 this.handler(req, res);
+};
 } else {
 ;
 res.end();
@@ -73,11 +80,11 @@ res.end(view);
 }
 wdo_modules.Router = Router;
 var router = new wdo_modules.Router();
-var ahqz_event = function(request, response){
+var stgw_event = function(request, response){
 router.serve(request, response);
 }
 var http = require('http');
-var server = http.createServer(ahqz_event);
+var server = http.createServer(stgw_event);
 var PORT = process.env.PORT || 3000;
 server.listen(PORT);
 console.log("http server listening on port "+PORT);

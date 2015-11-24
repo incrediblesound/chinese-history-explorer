@@ -24,7 +24,12 @@ Init[..][..]{
 			if;
 		});
 	elif(/text\/html/.test(accept))->
-		.handler(req, res);
+		if(req.url === '/info') ->
+			view = sys.loadText('./templates/about.html');
+			res.end(view);
+		else ->
+			.handler(req, res);
+		if;
 	else ->
 		res.end();
 	if;

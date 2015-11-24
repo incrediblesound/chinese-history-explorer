@@ -1,20 +1,23 @@
 <html>
 <head>
 	<title></title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
+	<div class="button-group">
+		<div><button class="control-btn"><a href="/">Home</a></button></div>
+		<div><button class="control-btn"><a href="/info">About</a></button></div>
+	</div>
 	<div class="container">
 		<h1>{{data.title}}</h1>
+		<p class="text-center">~*~</p>
 		<div class="links">
 			{{#data.children}}
 				<a href="{{url}}{{tag}}/" class="link">{{title}}</a>
 			{{/data.children}}
 		</div>
-		<br>
-		<hr>
-		<div>
+		<div class="text-body">
 			<p class="description">
 				{{data.description}}
 			</p>

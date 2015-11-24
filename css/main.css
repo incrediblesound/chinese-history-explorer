@@ -2,6 +2,14 @@ body {
 	background-color: #fafafa;
 }
 
+h1, h2, div, span, p, a {
+	font-family: "PT Serif";
+}
+
+.text-center {
+	text-align: center;
+}
+
 .container {
 	background-color: white;
 	border: solid 1px #666;
@@ -11,12 +19,10 @@ body {
 	padding: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: "Helvetica"
 }
 
 h1 {
 	text-align: center;
-	font-family: "Times";
 }
 
 .link {
@@ -29,11 +35,41 @@ h1 {
 }
 
 .links {
-	display: inline-flex;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+.text-body {
+	padding: 10px;
+}
+
+.links a {
+	color: #555;
+}
+
 .description {
 	line-height: 1.5;
+}
+
+button {
+	background-color: white;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+.button-group {
+	width: 18%;
+	position: fixed;
+	left: 0;
+}
+
+.control-btn {
+	margin-left: 15px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+button a {
+	text-decoration: none;
+	color: black;
 }

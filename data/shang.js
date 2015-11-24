@@ -39,7 +39,7 @@ module.exports = {
 				'subject matter of divination became narrower, mostly covering requests '+
 				'for safety and a plentiful hunt. The calligraphic inscriptions became '+
 				'simpler both in style and content, and the interpretations lost their '+
-				'depth and variety. <br> This could be due to a greater '+
+				'depth and variety. This could be due to a greater '+
 				'systemization of royal power that relied less on spectacle '+
 				'as it became more established, and potentially also because a '+
 				'new system of divination was emerging that later became known as the "Zhou Yi", or Yi Ching as it '+
